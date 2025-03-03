@@ -15,7 +15,14 @@ class Storage {
         this.#items.push(newItem);
     }
     removeItem(itemToRemove) {
-        this.#items.filter((item) => item !== itemToRemove);
+
+       const findIdx = this.#items.indexOf(itemToRemove);
+        // console.log(findIdx);
+        if (findIdx !== -1) {
+            this.#items.splice(findIdx, 1);
+        }
+        return this.#items;
+ 
     }
 }
 
